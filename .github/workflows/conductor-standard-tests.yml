@@ -1,4 +1,4 @@
-name: CONDUCTOR_TEST
+name: Conductor Standard Tests
 
 on:
   schedule:

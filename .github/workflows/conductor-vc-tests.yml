@@ -1,4 +1,4 @@
-name: CONDUCTOR_TEST
+name: Conductor VC Tests
 
 on:
   schedule:

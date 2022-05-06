@@ -1,4 +1,4 @@
-name: CONDUCTOR_BLOBBER_TEST
+name: Conductor Blobber Tests
 
 on:
   schedule:
@@ -33,35 +33,35 @@ jobs:
         git clone https://github.com/0chain/0chain.git
         cd 0chain && git checkout ${{ steps.get_branch.outputs.BRANCH }}
     
-    - name: Docker Init Setup.
-      run: |
-        cd 0chain
-        bash ./docker.local/bin/init.setup.sh
+    # - name: Docker Init Setup.
+    #   run: |
+    #     cd 0chain
+    #     bash ./docker.local/bin/init.setup.sh
 
-    - name: Docker Network Setup.
-      run: |
-        cd 0chain
-        bash ./docker.local/bin/setup_network.sh || true
+    # - name: Docker Network Setup.
+    #   run: |
+    #     cd 0chain
+    #     bash ./docker.local/bin/setup_network.sh || true
 
-    - name: Building Base Images
-      run: |
-        cd 0chain
-        bash ./docker.local/bin/build.base.sh
+    # - name: Building Base Images
+    #   run: |
+    #     cd 0chain
+    #     bash ./docker.local/bin/build.base.sh
 
-    - name: Build Miner Docker Image For Integration Test.
-      run: |
-        cd 0chain
-        bash ./docker.local/bin/build.miners-integration-tests.sh
+    # - name: Build Miner Docker Image For Integration Test.
+    #   run: |
+    #     cd 0chain
+    #     bash ./docker.local/bin/build.miners-integration-tests.sh
 
-    - name: Build Sharder Docker Image For Integration Test.
-      run: |
-        cd 0chain
-        bash ./docker.local/bin/build.sharders-integration-tests.sh
+    # - name: Build Sharder Docker Image For Integration Test.
+    #   run: |
+    #     cd 0chain
+    #     bash ./docker.local/bin/build.sharders-integration-tests.sh
 
-    - name: View Change Rounds
-      run: |
-        awk 'NR >= 30 && NR <= 34' ./0chain/docker.local/config/sc.yaml
-        awk 'NR >= 9 && NR <= 14' ./0chain/docker.local/config/0chain.yaml
+    # - name: View Change Rounds
+    #   run: |
+    #     awk 'NR >= 30 && NR <= 34' ./0chain/docker.local/config/sc.yaml
+    #     awk 'NR >= 9 && NR <= 14' ./0chain/docker.local/config/0chain.yaml
 
     - name: Git clone blobber
       run: |
