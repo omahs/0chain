@@ -116,15 +116,18 @@ jobs:
 
     - name: Init setup for blobbers
       run: |
-        cd blobber && ./docker.local/bin/blobber.init.setup.sh
+        cd blobber
+        ./docker.local/bin/blobber.init.setup.sh
 
     - name: Build blobber base
       run: |
-        cd blobber && ./docker.local/bin/build.base.sh
+        cd blobber
+        ./docker.local/bin/build.base.sh
 
     - name: Build blobber
       run: |
-        cd blobber && ./docker.local/bin/build.blobber-integration-tests.sh
+        cd blobber
+        ./docker.local/bin/build.blobber-integration-tests.sh
 
     - name: Add ZCN config
       run: |
@@ -149,7 +152,8 @@ jobs:
 
     - name: Starting validator Tests.
       run: |
-        cd 0chain && ./docker.local/bin/start.conductor.sh validator-1
+        cd 0chain
+        ./docker.local/bin/start.conductor.sh validator-1
 
     - name: Creating Artifact con-tests-logs.tar.gz file.
       run: |
